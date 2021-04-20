@@ -1,0 +1,25 @@
+{
+  "foods": [
+    {
+      "image": "sdfsdfsdfds",
+      "name": "Wellington Santos de Souza",
+      "price": "19:90",
+      "description": "aplicação para consumiar a api da elo",
+      "id": 1
+    },
+    {
+      "image": "sdfsdfsdfds",
+      "name": "Wellington Santos de Souza",
+      "price": "dsfsdfsdf",
+      "description": "aplicação para consumiar a api da elo",
+      "id": 2
+    },
+    {
+      "image": "sdfsdfsdfds",
+      "name": "Wellington Santos de Souza",
+      "price": "19:90",
+      "description": "aplicação para consumiar a api da elo",
+      "id": 3
+    }
+  ]
+}
