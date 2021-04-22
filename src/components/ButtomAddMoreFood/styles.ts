@@ -1,21 +1,8 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
-  padding: 48px 40px;
+export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-
-  h1 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
-    margin-bottom: 40px;
-  }
-
-  button {
-    margin-top: 48px;
-    align-self: flex-end;
-  }
+  padding: 20px 40px;
 
   button {
     display: flex;

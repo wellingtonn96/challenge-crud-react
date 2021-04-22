@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import Header from '../../components/Header';
+import { FiSearch } from 'react-icons/fi';
+import ButtomAddMoreFood from '../../components/ButtomAddMoreFood';
 
 import api from '../../services/api';
 
 import Food from '../../components/Food';
 import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
+import SideBar from '../../components/Sidebar';
 
-import { FoodsContainer } from './styles';
+import { FoodsContainer, Container } from './styles';
 
 interface IFoodPlate {
   id: number;
@@ -22,7 +24,6 @@ interface IFoodPlate {
 const Dashboard: React.FC = () => {
   const [foods, setFoods] = useState<IFoodPlate[]>([]);
   const [food, setFood] = useState<IFoodPlate | null>(null);
-  const [editingFood, setEditingFood] = useState<IFoodPlate>({} as IFoodPlate);
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
@@ -53,8 +54,6 @@ const Dashboard: React.FC = () => {
     async function loadFoods(): Promise<void> {
       const response = await api.get('/foods');
 
-      console.log('executou');
-
       setFoods(response.data.reverse());
     }
 
@@ -63,27 +62,37 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <Header openModal={toggleModal} />
       <ModalAddFood isOpen={modalOpen} setIsOpen={toggleModal} />
       <ModalEditFood
         isOpen={editModalOpen}
         food={food}
         setIsOpen={toggleEditModal}
       />
-
-      <FoodsContainer data-testid="foods-list">
-        {foods &&
-          foods.map(foodData => (
-            <div onClick={() => handleEditPlate(foodData)}>
-              <Food
-                key={foodData.id}
-                food={foodData}
-                handleDelete={() => handleDeleteFood(foodData.id)}
-                handleToogleModal={toggleEditModal}
-              />
-            </div>
-          ))}
-      </FoodsContainer>
+      <SideBar />
+      <Container>
+        <div>
+          <div className="input-container">
+            <input type="text" placeholder="Search" />
+            <button type="button">
+              <FiSearch />
+            </button>
+          </div>
+          <ButtomAddMoreFood openModal={toggleModal} />
+          <FoodsContainer data-testid="foods-list">
+            {foods &&
+              foods.map(foodData => (
+                <div onClick={() => handleEditPlate(foodData)}>
+                  <Food
+                    key={foodData.id}
+                    food={foodData}
+                    handleDelete={() => handleDeleteFood(foodData.id)}
+                    handleToogleModal={toggleEditModal}
+                  />
+                </div>
+              ))}
+          </FoodsContainer>
+        </div>
+      </Container>
     </>
   );
 };

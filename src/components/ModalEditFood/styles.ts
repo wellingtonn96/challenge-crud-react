@@ -19,24 +19,19 @@ export const Form = styled(Unform)`
   }
 
   button {
-    font-weight: 600;
-    border-radius: 8px;
-    border: 0;
-    background: #39b100;
-    color: #fff;
-
     display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .text {
-      padding: 16px 24px;
-    }
+    padding: 10px 40px;
+    border: 0;
+    border-radius: 50px;
+    font-weight: 500;
+    color: white;
+    background: #0bd487;
+    margin-left: 5px;
+    box-shadow: rgba(0, 0, 2, 0.2) 0px 5px 35px;
 
     .icon {
       display: flex;
-      padding: 16px 16px;
-      background: #41c900;
+      border: 0;
       border-radius: 0 8px 8px 0;
       margin: 0 auto;
     }

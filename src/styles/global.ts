@@ -9,7 +9,12 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #ffff;
+    background: #AAFFA9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right bottom, #11FFBD, #AAFFA9 20%, #f05053 80%);  /* Chrome 80-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom, #11FFBD, #AAFFA9 20%, #f05053 80%); /* W,3C, IE 80+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: #FFF;
     -webkit-font-smoothing: antialiased;
   }
@@ -26,4 +31,6 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+
 `;

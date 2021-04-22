@@ -8,10 +8,10 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   display: flex;
   align-items: center;
-
-  background: #fff;
-  border-radius: 8px;
-  padding: 18px 24px;
+  height: 50px;
+  background: #f5f5f5;
+  border-radius: 50px;
+  padding: 0 24px;
   width: 100%;
   font-size: 16px;
 
@@ -44,10 +44,6 @@ export const Container = styled.div<IContainerProps>`
     background: transparent;
     border: 0;
     color: #b7b7cc;
-
-    &::placeholder {
-      color: #b7b7cc;
-    }
   }
 
   svg {

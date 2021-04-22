@@ -38,14 +38,14 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
           bottom: 'auto',
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)',
-          background: '#F0F0F5',
+          background: '#ffff',
           color: '#000000',
           borderRadius: '8px',
-          width: '736px',
+          width: '600px',
           border: 'none',
         },
         overlay: {
-          backgroundColor: '#121214e6',
+          backgroundColor: 'rgba(83, 83, 83, 0.692)',
         },
       }}
     >
